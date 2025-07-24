@@ -3,7 +3,7 @@ const test = require('ava')
 const got = require('got').extend({ responseType: 'json' })
 const { runServer } = require('./helpers')
 const isCI = !!process.env.CI
-
+console.log(isCI)
 test('ping', async t => {
   const serverUrl = await runServer(t)
   const { body, statusCode } = await got('ping', {
